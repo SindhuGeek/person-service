@@ -21,7 +21,7 @@ import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import neo.person.dto.request.PersonDTO;
-import neo.person.dto.response.personResponseDTO;
+import neo.person.dto.response.PersonResponseDTO;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(value = PersonController.class)
@@ -39,7 +39,7 @@ public class PersonControllerTest {
 	public void testAddPerson() throws Exception {
 
 		Mockito.when(personController.createPerson(Mockito.any(PersonDTO.class)))
-				.thenReturn(personResponseDTO.builder().message("").build());
+				.thenReturn(PersonResponseDTO.builder().message("").build());
 
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/api/v1/person").accept(MediaType.APPLICATION_JSON)
 				.content(examplePersonJson).contentType(MediaType.APPLICATION_JSON);
@@ -55,7 +55,7 @@ public class PersonControllerTest {
 	@Test
 	public void testUpdatePerson() throws Exception {
 		String updatePersonJson = "{\"firstName\":\"Harish\",\"lastName\":\"Gummalla\"}";
-		personResponseDTO response = personResponseDTO.builder().message("Updated person ID").build();	
+		PersonResponseDTO response = PersonResponseDTO.builder().message("Updated person ID").build();	
 
 		Mockito.when(personController.updatePerson(Mockito.any(PersonDTO.class), Mockito.any()))
 				.thenReturn(response);

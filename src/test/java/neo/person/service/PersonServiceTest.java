@@ -12,7 +12,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import neo.person.dto.request.PersonDTO;
-import neo.person.dto.response.personResponseDTO;
+import neo.person.dto.response.PersonResponseDTO;
 import neo.person.entity.Person;
 import neo.person.exception.PersonNotFoundException;
 import neo.person.repository.PersonRepository;
@@ -39,7 +39,7 @@ public class PersonServiceTest {
 
         when(personRepository.save(any(Person.class))).thenReturn(expectedSavedPerson);
        
-        personResponseDTO successMessage = personService.createPerson(personDTO);
+        PersonResponseDTO successMessage = personService.createPerson(personDTO);
 
         Assert.assertNotNull(successMessage);
 
@@ -52,7 +52,7 @@ public class PersonServiceTest {
 
         when(personRepository.save(any(Person.class))).thenReturn(expectedSavedPerson);
        
-        personResponseDTO successMessage;
+        PersonResponseDTO successMessage;
 		try {
 			successMessage = personService.updatePerson(personDTO,1L);
 		} catch (PersonNotFoundException e) {
@@ -62,8 +62,8 @@ public class PersonServiceTest {
     
     }
 
-    private personResponseDTO createExpectedSucessMessageResponse(Long id) {
-        return personResponseDTO
+    private PersonResponseDTO createExpectedSucessMessageResponse(Long id) {
+        return PersonResponseDTO
                 .builder()
                 .message("Created Person with ID " + id)
                 .build();

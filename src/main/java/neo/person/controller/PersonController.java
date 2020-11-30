@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import lombok.AllArgsConstructor;
 import neo.person.dto.request.PersonDTO;
-import neo.person.dto.response.personResponseDTO;
+import neo.person.dto.response.PersonResponseDTO;
 import neo.person.exception.PersonNotFoundException;
 import neo.person.service.PersonService;
 
@@ -44,7 +44,7 @@ public class PersonController {
      */
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public personResponseDTO createPerson(@RequestBody @Valid PersonDTO personDTO) {
+    public PersonResponseDTO createPerson(@RequestBody @Valid PersonDTO personDTO) {
     	   return personService.createPerson(personDTO);
     }
 
@@ -59,7 +59,7 @@ public class PersonController {
      */
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public personResponseDTO updatePerson(@RequestBody @Valid PersonDTO personDTO, @PathVariable Long id)
+    public PersonResponseDTO updatePerson(@RequestBody @Valid PersonDTO personDTO, @PathVariable Long id)
             throws PersonNotFoundException {
         return personService.updatePerson(personDTO, id);
     }
