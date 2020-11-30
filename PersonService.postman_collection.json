@@ -1,0 +1,104 @@
+{
+	"variables": [],
+	"info": {
+		"name": "PersonService",
+		"_postman_id": "82076380-a79d-ac72-cfc1-9b77eb12e85b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetPerson",
+			"request": {
+				"url": "localhost:8080/api/v1/person/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllPersons",
+			"request": {
+				"url": "localhost:8080/api/v1/person",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PersonCount",
+			"request": {
+				"url": "localhost:8080/api/v1/person/personCount",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "AddPerson",
+			"request": {
+				"url": "localhost:8080/api/v1/person",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\" : null,\r\n  \"firstName\" : \"Sindhu\",\r\n  \"lastName\" : \"Dhannina\",\r\n  \"addressList\" : [ {\r\n    \"street\" : \"Carrigmore Terrace\",\r\n    \"city\" : \"Dublin\",\r\n    \"state\" : \"Dublin\",\r\n    \"postalCode\" : \"D24HD89\"\r\n  } ]\r\n}\r\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "UpdatePerson",
+			"request": {
+				"url": "localhost:8080/api/v1/person/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\" : null,\r\n  \"firstName\" : \"Sindhu\",\r\n  \"lastName\" : \"Gummalla\",\r\n  \"birthDate\" : \"12-12-1984\",\r\n  \"addressList\" : [ {\r\n  \t\"id\" : 1,\r\n    \"street\" : \"Carrigmore court\",\r\n    \"city\" : \"Dublin\",\r\n    \"state\" : \"Dublin\",\r\n    \"postalCode\" : \"D24HD89\"\r\n  },{\r\n    \"street\" : \"Carrigmore Terrace1\",\r\n    \"city\" : \"Dublin1\",\r\n    \"state\" : \"Dublin1\",\r\n    \"postalCode\" : \"D24HD90\"\r\n  } ]\r\n}\r\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "DeletePerson",
+			"request": {
+				"url": "localhost:8080/api/v1/person/1",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\" : 2005,\r\n  \"firstName\" : \"Sindhu\",\r\n  \"lastName\" : \"Gummalla\",\r\n    \"phones\" : [ {\r\n    \"id\" : 20052,\r\n    \"type\" : \"HOME\",\r\n    \"number\" : \"12345678912345\"\r\n  } ]\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
