@@ -10,7 +10,7 @@ It can be easily upgraded to read/write from a real database instead of the H2 i
 **1. Clone the application**
 
 ```bash
-git clone https://github.com/coma123/Spring-Boot-Blog-REST-API.git
+git clone https://github.com/SindhuGeek/person-service.git
 ```
 
 **2. Build the app using maven**
