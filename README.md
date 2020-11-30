@@ -1,9 +1,29 @@
 Person Service
 ==============
 
-A simple JPA backend service that provides CURD operations for person details into H2 in memory database.
+A simple JPA backend service that provides CURD operations for person details using H2 in memory database.
 
 It can be easily upgraded to read/write from a real database instead of the H2 in memory DB
+
+## Technology Stack
+
+##DEV
+```bash
+JPA
+Spring Boot
+MapStruct(Code generator)
+Lombok
+H2 In memory
+Hibernate validator
+```
+##Testing
+
+```bash
+Junit4
+Mockito
+
+```
+
 
 ## Steps to Setup
 
